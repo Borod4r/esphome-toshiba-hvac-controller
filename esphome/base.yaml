@@ -1,8 +1,16 @@
 esphome:
   name: ${deviceid}
   friendly_name: ${devicename}
-  includes:
-    - toshiba-controller.h
+#  includes:
+#    - toshiba-controller.h
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/Borod4r/esphome-toshiba-hvac-controller
+      ref: develop
+    components: [toshiba-hvac-controller]
+    refresh: 0s
 
 esp32:
   board: esp32dev
